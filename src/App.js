@@ -4,6 +4,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Login from "./components/auth/Login";
 import AddBlog from "./components/blogs/AddBlog";
+import Blogs from "./components/blogs/Blogs";
 import AuthenticateComponent from './components/auth/AuthenticateComponent';
 
 function App() {
@@ -17,6 +18,8 @@ function App() {
         {/* <AuthenticateComponent/> */}
         {/* <Route exact path='/create'   component={AuthenticateComponent} customcomponent={AddBlog}/> */}
         <Route exact path='/create'   render={()=><AuthenticateComponent customcomponent={AddBlog} />} />
+        <Route exact path='/blogs'   render={()=><AuthenticateComponent customcomponent={Blogs} />} />
+        {/* <Route exact path="/blogs" component={Blogs} ></Route> */}
      
 
      

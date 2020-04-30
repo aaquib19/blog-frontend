@@ -46,17 +46,8 @@ class AuthenticateComponent extends Component{
                 <div>Loading ...</div>
             );
         }
-        // console.log(this.state);
-        console.log(this.props);
-        // const { user } = this.state;
-        // const children = this.props.children()
-        const children = React.Children.map(this.props.children, (child, index) => {
-            return React.cloneElement(child, {
-                ...this.state
-                // isActive: index === this.state.activeIndex,
-                
-            });
-        });
+        console.log(this.state,this.props);
+
         return (
             <div>
          
