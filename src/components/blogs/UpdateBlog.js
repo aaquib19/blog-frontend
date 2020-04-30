@@ -23,6 +23,11 @@ class App extends Component{
         const url =`/blogs/${this.props.id}`;
         const res = await axios.get(url);
         console.log(res.data);
+        if(res.data.user_id!== this.props.user.id){
+            window.location.replace('/blogs');
+
+        }
+        console.log(res.data.user_id,this.props.user.id);
         this.setState({
             title:res.data.title,
             content:res.data.content,
@@ -41,10 +46,10 @@ class App extends Component{
 
     submit(e){
         e.preventDefault();
-        const url = "http://localhost:3000/blogs";
+        const url = `/blogs/${this.props.id}`;
         const jwt = getJwt();
         // console.log(jwt);
-        axios.post(
+        axios.put(
         url,{
            blog:{
                title:this.state.title,
