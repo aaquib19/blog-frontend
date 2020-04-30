@@ -16,7 +16,7 @@ class AuthenticateComponent extends Component {
             window.location.replace('/login');
 
         }
-        const url = "auth/test"
+        const url = "/auth/test"
         try {
             const res = await axios.get(url, {
                 headers: {
