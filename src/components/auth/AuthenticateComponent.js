@@ -16,6 +16,7 @@ class AuthenticateComponent extends Component {
             window.location.replace('/login');
 
         }
+        conso
         const url = "/auth/test"
         try {
             const res = await axios.get(url, {
@@ -32,7 +33,7 @@ class AuthenticateComponent extends Component {
         catch (err) {
             console.log(err);
             localStorage.removeItem('cool-jwt');
-            window.location.replace('/login');
+            // window.location.replace('/login');
         }
 
     }
