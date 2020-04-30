@@ -85,7 +85,7 @@ class App extends Component{
                 <label>Title</label> <input type="text" name="title"  onChange={this.change } value={this.state.title} /><br/><br/>
                 <label>Content</label>   <textarea type="text" name="content" onChange={this.change} value={this.state.content} /><br/><br/>
                 
-                <button >create Blog</button>
+                <button >Update Blog</button>
                 </div>
               </form>
             </div>
