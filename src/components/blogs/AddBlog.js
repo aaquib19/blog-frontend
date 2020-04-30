@@ -46,6 +46,8 @@ class App extends Component {
             }
         }).then(res => {
             console.log(res.data);
+            window.location.replace('/blogs/');
+
         }).catch(err => {
             console.log(err);
         })
