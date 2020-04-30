@@ -7,7 +7,8 @@ class App extends Component {
 
         this.state = {
             email: "",
-            password: ""
+            password: "",
+            name: ""
 
         }
         this.change = this.change.bind(this);
@@ -26,13 +27,14 @@ class App extends Component {
 
     submit(e) {
         e.preventDefault();
-        const url = "/auth/login";
+        const url = "/auth/register";
         axios.post(
             url, {
+            name: this.state.name,
             email: this.state.email,
             password: this.state.password
         }).then(res => {
-            console.log("logged in successfully")
+            console.log("created user successfully")
             localStorage.setItem('cool-jwt', res.data.access_token)
         })
 
@@ -44,6 +46,7 @@ class App extends Component {
             <div>
                 <form onSubmit={e => this.submit(e)}>
                     <div>
+                        <label>Name</label>    <input type="text" name="name" onChange={this.change} value={this.state.name} /><br /><br />
                         <label>Email</label>    <input type="text" name="email" onChange={this.change} value={this.state.email} /><br /><br />
                         <label>Password</label>  <input type="password" name="password" onChange={this.change} value={this.state.password} /><br /><br />
 

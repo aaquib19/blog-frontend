@@ -12,10 +12,7 @@ class App extends Component {
             blogs: []
 
         }
-        this.change = this.change.bind(this);
-        this.submit = this.submit.bind(this);
         this.blogDelete = this.blogDelete.bind(this);
-        // console.log(this.props);
 
     }
     async componentDidMount() {
@@ -29,12 +26,7 @@ class App extends Component {
     }
 
 
-    change(e) {
-        this.setState({
-            [e.target.name]: e.target.value
 
-        })
-    }
 
     async blogDelete(e) {
         console.log(e);
@@ -53,34 +45,8 @@ class App extends Component {
     }
 
 
-    submit(e) {
-        e.preventDefault();
-        const url = "/blogs";
-        const jwt = getJwt();
-        // console.log(jwt);
-        axios.post(
-            url, {
-            blog: {
-                title: this.state.title,
-                content: this.state.content,
-                slug: this.state.title,
-                user_id: this.props.user.id
-            }
-        }, {
-            headers: {
-                Authorization: jwt
-            }
-        }).then(res => {
-            console.log(res.data);
-        }).catch(err => {
-            console.log(err);
-        })
-
-
-    }
 
     render() {
-        // console.log(this.props.user.id);
         const { blogs } = this.state;
         console.log(this.props)
         if (blogs.length === 0) {

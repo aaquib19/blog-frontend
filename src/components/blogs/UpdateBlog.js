@@ -71,7 +71,6 @@ class App extends Component {
     }
 
     render() {
-        // console.log(this.props.user.id);
         console.log(this.state);
         if (this.state.title === "") {
             return (

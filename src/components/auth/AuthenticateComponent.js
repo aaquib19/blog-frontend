@@ -1,17 +1,12 @@
 import React, { Component, Children } from 'react';
 import { getJwt } from '../../helpers/jwt';
 import axios from 'axios';
-import { Link } from 'react-router-dom'
-
-import { withRouter } from "react-router-dom";
-import AddBlog from '../blogs/AddBlog';
 class AuthenticateComponent extends Component {
     constructor(props) {
         super(props);
         this.state = {
             user: undefined
         }
-        // 
     }
 
     async componentDidMount() {
