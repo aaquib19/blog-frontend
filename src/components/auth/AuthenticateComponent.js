@@ -17,7 +17,7 @@ class AuthenticateComponent extends Component {
 
         }
         // conso
-        const url = "/auth/test"
+        const url = "http://localhost:8000/auth/test"
         try {
             const res = await axios.get(url, {
                 headers: {
