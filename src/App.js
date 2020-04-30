@@ -10,28 +10,28 @@ import AuthenticateComponent from './components/auth/AuthenticateComponent';
 
 function App() {
   return (
-   <Router>
+    <Router>
       <div className="App">
-      {/* <header className="App-header"> */}
-      <Switch>
-      <Route exact path="/login" component={Login} ></Route>
+        {/* <header className="App-header"> */}
+        <Switch>
+          <Route exact path="/login" component={Login} ></Route>
 
-        {/* <AuthenticateComponent/> */}
-        <Route exact path='/check/:id'   render={(props)=><AuthenticateComponent customcomponent={UpdateBlog} {...props} />}/>
-        <Route exact path='/create'   render={(props)=><AuthenticateComponent customcomponent={AddBlog}{...props}  />} />
-        <Route exact path='/blogs'   render={(props)=><AuthenticateComponent customcomponent={Blogs}{...props}  />} />
-        <Route exact path='/blog-update/:id'   render={(props)=><AuthenticateComponent customcomponent={UpdateBlog} {...props} />} />
-        {/* <Route exact path='/blog-update/:id'   render={()=><AuthenticateComponent customcomponent={UpdateBlog} />} /> */}
-        {/* <Route exact path="/blogs" component={Blogs} ></Route> */}
-     
+          {/* <AuthenticateComponent/> */}
+          <Route exact path='/check/:id' render={(props) => <AuthenticateComponent customcomponent={UpdateBlog} {...props} />} />
+          <Route exact path='/create' render={(props) => <AuthenticateComponent customcomponent={AddBlog}{...props} />} />
+          <Route exact path='/blogs' render={(props) => <AuthenticateComponent customcomponent={Blogs}{...props} />} />
+          <Route exact path='/blog-update/:id' render={(props) => <AuthenticateComponent customcomponent={UpdateBlog} {...props} />} />
+          {/* <Route exact path='/blog-update/:id'   render={()=><AuthenticateComponent customcomponent={UpdateBlog} />} /> */}
+          {/* <Route exact path="/blogs" component={Blogs} ></Route> */}
 
-     
 
-      {/* render={(props) => <Greeting text="Hello, " {...props} /> */}
-      </Switch>
-      {/* </header> */}
-    </div>
-   </Router>
+
+
+          {/* render={(props) => <Greeting text="Hello, " {...props} /> */}
+        </Switch>
+        {/* </header> */}
+      </div>
+    </Router>
   );
 }
 
