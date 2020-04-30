@@ -20,7 +20,15 @@ class App extends Component{
 
     async componentDidMount(){
         console.log(this.props);
-        
+        const url =`/blogs/${this.props.id}`;
+        const res = await axios.get(url);
+        console.log(res.data);
+        this.setState({
+            title:res.data.title,
+            content:res.data.content,
+        })
+
+
     }
 
     change(e){
@@ -59,13 +67,18 @@ class App extends Component{
 
     render(){
         // console.log(this.props.user.id);
-
+        console.log(this.state);
+        if(this.state.title===""){
+            return (
+                <div>loading ...</div>
+            )
+        }
         return( 
             <div>
               <form onSubmit={e=>this.submit(e)}>
               <div>
-                <label>Title</label> <input type="text" name="title"  onChange={this.change } value={this.state.email} /><br/><br/>
-                <label>Content</label>   <textarea type="text" name="content" onChange={this.change} value={this.state.password} /><br/><br/>
+                <label>Title</label> <input type="text" name="title"  onChange={this.change } value={this.state.title} /><br/><br/>
+                <label>Content</label>   <textarea type="text" name="content" onChange={this.change} value={this.state.content} /><br/><br/>
                 
                 <button >create Blog</button>
                 </div>
