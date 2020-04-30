@@ -11,6 +11,8 @@ class AuthenticateComponent extends Component{
         this.state={
             user:undefined
         }
+        // console.log(this.pr/ops)
+        // console.log(this.props.match.params.id);
     }
 
      async componentDidMount(){
@@ -34,6 +36,7 @@ class AuthenticateComponent extends Component{
         // console.log(this.state.user);
      }
      catch(err){
+         console.log(err);
             localStorage.removeItem('cool-jwt');
             window.location.replace('/login');
      }
@@ -46,12 +49,11 @@ class AuthenticateComponent extends Component{
                 <div>Loading ...</div>
             );
         }
-        console.log(this.state,this.props);
 
         return (
             <div>
          
-           <this.props.customcomponent {...this.state}/> 
+           <this.props.customcomponent {...this.state} id={this.props.match.params.id} /> 
 
            </div>
         );

@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Login from "./components/auth/Login";
 import AddBlog from "./components/blogs/AddBlog";
 import Blogs from "./components/blogs/Blogs";
+import UpdateBlog from "./components/blogs/UpdateBlog";
 import AuthenticateComponent from './components/auth/AuthenticateComponent';
 
 function App() {
@@ -16,9 +17,11 @@ function App() {
       <Route exact path="/login" component={Login} ></Route>
 
         {/* <AuthenticateComponent/> */}
-        {/* <Route exact path='/create'   component={AuthenticateComponent} customcomponent={AddBlog}/> */}
-        <Route exact path='/create'   render={()=><AuthenticateComponent customcomponent={AddBlog} />} />
-        <Route exact path='/blogs'   render={()=><AuthenticateComponent customcomponent={Blogs} />} />
+        <Route exact path='/check/:id'   render={(props)=><AuthenticateComponent customcomponent={UpdateBlog} {...props} />}/>
+        <Route exact path='/create'   render={(props)=><AuthenticateComponent customcomponent={AddBlog}{...props}  />} />
+        <Route exact path='/blogs'   render={(props)=><AuthenticateComponent customcomponent={Blogs}{...props}  />} />
+        <Route exact path='/blog-update/:id'   render={(props)=><AuthenticateComponent customcomponent={UpdateBlog} {...props} />} />
+        {/* <Route exact path='/blog-update/:id'   render={()=><AuthenticateComponent customcomponent={UpdateBlog} />} /> */}
         {/* <Route exact path="/blogs" component={Blogs} ></Route> */}
      
 

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import { getJwt } from '../../helpers/jwt';
+import { Link } from 'react-router-dom'
 
 class App extends Component{
     constructor(props){
@@ -91,9 +92,10 @@ class App extends Component{
             <div>
             {
                 blogs.map((blog, index) => {
-                    let del;
+                    let del,upd;
                     if(this.props.user.id === blog.user_id){
-                         del = <button onClick={()=>this.blogDelete((blog.id))}>Delete</button>
+                        del = <button onClick={()=>this.blogDelete((blog.id))}>Delete</button>
+                        upd = <Link  to={`/blog-update/${blog.id}`} >Update</Link>
                     }
 
                 return (
@@ -101,7 +103,7 @@ class App extends Component{
                  <p key={`t${blog.id}`}>{ blog.title }</p>
                  <p key={blog.id} >{ blog.content }</p>
                     {del}
-
+                    {upd}
                  <hr/>
                 </div>
                 )
