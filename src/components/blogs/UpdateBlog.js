@@ -46,7 +46,7 @@ class App extends Component {
 
     submit(e) {
         e.preventDefault();
-        const url = `/blogs/${this.props.id}`;
+        const url = `http://localhost:8000/blogs/${this.props.id}`;
         const jwt = getJwt();
         // console.log(jwt);
         axios.put(

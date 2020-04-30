@@ -26,13 +26,15 @@ class App extends Component {
 
     submit(e) {
         e.preventDefault();
-        const url = "/auth/login";
+        const url = "http://localhost:8000/auth/login";
         axios.post(
             url, {
             email: this.state.email,
             password: this.state.password
         }).then(res => {
             console.log("logged in successfully")
+            window.location.replace('/');
+
             localStorage.setItem('cool-jwt', res.data.access_token)
         })
 
