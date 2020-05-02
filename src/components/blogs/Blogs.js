@@ -33,7 +33,7 @@ class App extends Component {
         const jwt = getJwt();
         const url = `/blogs/${e}`;
         console.log(url)
-        axios.delete(e, {},
+        axios.delete(url, {},
             {
                 headers: {
                     Authorization: jwt

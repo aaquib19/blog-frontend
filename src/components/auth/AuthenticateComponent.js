@@ -28,6 +28,7 @@ class AuthenticateComponent extends Component {
             this.setState({
                 user: res.data.user
             })
+            console
             console.log(this.state.user);
         }
         catch (err) {
