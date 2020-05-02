@@ -62,6 +62,8 @@ class App extends Component {
                 Authorization: jwt
             }
         }).then(res => {
+            window.location.replace('/blogs');
+
             console.log(res.data);
         }).catch(err => {
             console.log(err);
