@@ -29,7 +29,7 @@ class App extends Component {
 
     submit(e) {
         e.preventDefault();
-        const url = "http://localhost:8000/blogs";
+        const url = "/blogs";
         const jwt = getJwt();
         // console.log(jwt);
         axios.post(
