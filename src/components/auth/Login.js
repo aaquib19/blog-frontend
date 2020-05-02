@@ -26,7 +26,7 @@ class App extends Component {
 
     submit(e) {
         e.preventDefault();
-        const url = "http://localhost:8000/auth/login";
+        const url = "/auth/login";
         axios.post(
             url, {
             email: this.state.email,

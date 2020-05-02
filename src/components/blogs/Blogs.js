@@ -16,7 +16,7 @@ class App extends Component {
 
     }
     async componentDidMount() {
-        const url = "http://localhost:8000/blogs";
+        const url = "/blogs";
         const res = await axios.get(url);
         console.log(res);
         this.setState({
@@ -31,7 +31,7 @@ class App extends Component {
     async blogDelete(e) {
         console.log(e);
         const jwt = getJwt();
-        const url = `http://localhost:8000/blogs/${e}`;
+        const url = `/blogs/${e}`;
         console.log(url)
         axios.delete(e, {},
             {
