@@ -31,7 +31,7 @@ class App extends Component {
     async blogDelete(e) {
         console.log(e);
         const jwt = getJwt();
-        const url = `/blogs/${e}`;
+        const url = `http://137.116.139.150/blogs/${e}`;
         console.log(url)
         axios.delete(e, {},
             {
